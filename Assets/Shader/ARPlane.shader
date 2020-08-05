@@ -49,8 +49,7 @@
             float2 uv = input.uv * _Ratio;
             float2 st = frac(uv);
             fixed d = distance(st, fixed2(0.5, 0.5));
-            d = step(_Size, d);
-            fixed4 col = d < 0.35 ? _DotColor : _Color;
+            fixed4 col = d < _Size ? _DotColor : _Color;
             
             return col;
         }
